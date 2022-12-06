@@ -7,10 +7,7 @@ s = strip(input)
 
 function find_start(s, n_distinct=4)
     i = n_distinct
-    while i < length(s)
-        if length(unique(s[i-n_distinct+1:i])) == n_distinct
-            break
-        end
+    while length(unique(s[i-n_distinct+1:i])) != n_distinct
         i += 1
     end
     return i

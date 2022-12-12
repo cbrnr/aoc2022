@@ -14,3 +14,4 @@ One thing I do need to change is to make sure all scripts run outside the REPL. 
 - [Day 8](https://github.com/cbrnr/aoc2022/blob/main/08.jl)
 - [Day 9](https://github.com/cbrnr/aoc2022/blob/main/09.jl)
 - [Day 10](https://github.com/cbrnr/aoc2022/blob/main/10.jl)
+- [Day 11](https://github.com/cbrnr/aoc2022/blob/main/11.jl)

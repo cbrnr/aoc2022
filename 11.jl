@@ -32,6 +32,7 @@ end
 
 monkeys = parse_input(input)
 
+# part 1
 for round in 1:20
     for monkey in monkeys
         for item in monkey.items
@@ -45,6 +46,23 @@ for round in 1:20
 end
 
 sort!(monkeys, by=x -> x.i)
+println("Monkey business: ", monkeys[end-1].i * monkeys[end].i)
 
-# part 1
+# part 2
+monkeys = parse_input(input)
+factors = prod([monkey.divisible for monkey in monkeys])
+
+for round in 1:10000
+    for monkey in monkeys
+        for item in monkey.items
+            new = monkey.operation(item) % factors
+            next = new % monkey.divisible == 0 ? monkey.yes : monkey.no
+            push!(monkeys[next].items, new)
+        end
+        monkey.i += length(monkey.items)
+        monkey.items = []
+    end
+end
+
+sort!(monkeys, by=x -> x.i)
 println("Monkey business: ", monkeys[end-1].i * monkeys[end].i)
